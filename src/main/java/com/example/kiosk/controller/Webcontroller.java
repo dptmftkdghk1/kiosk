@@ -18,5 +18,8 @@ public class Webcontroller {
 		public String menumanagemethod() {	
 			return "menumanage";
 		}
-
+		@GetMapping("basket")
+		public String basketmethod(){
+			return "basket";
+		}
 }
