@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head></head>
+	<head>
+	<style>
+		table{
+			text-align:center;
+		}
+	</style>
+	</head>
 	<body>
 	<h2>메뉴판</h2>
 	<table border=1>
-		<tr><td>이름</td><td>이미지</td><td>상세정보</td><td>가격</td></tr>
+			<th>메뉴이름</th>
+			<th>메뉴사진</th>
+			<th>상세정보</th>
+			<th>가격</th>
+			<th>가격수정</th>
+			<th>삭제</th>
+			<th>숨기기</th>
 		<tr>
    			<td align="center">불고기</td>
    			<td><img src="돈까스.jpg"></img></td>
    			<td>소불고기 도시락~</td>
-   			<td>5600</td>
-   			<td><button>장바구니 추가</button></td>
+   			<td>5,600</td>
+   			<td><button>가격수정</button></td>
+   			<td><button>삭제</button></td>
+   			<td><button>매진</button></td>
    		</tr>
    		<tr>
    			<td align="center">돈까스</td>
    			<td><img src="돈까스.jpg"></img></td>
    			<td>바삭바삭 돈까스~</td>
-   			<td>4500</td>
-   			<td><button>장바구니 추가</button></td>
+   			<td>4,500</td>
+   			<td><button>가격수정</button></td>
+   			<td><button>삭제</button></td>
+   			<td><button>매진</button></td>
    		</tr>
    		<tr>
    			<td align="center">고추장 불고기</td>
    			<td><img src="돈까스.jpg"></img></td>
    			<td>매콤 고추장 불고기~</td>
-   			<td>5500</td>
-   			<td><button>장바구니 추가</button></td>
+   			<td>5,500</td>
+   			<td><button>가격수정</button></td>
+   			<td><button>삭제</button></td>
+   			<td><button>매진</button></td>
    		</tr>
    		<tr>
    			<td align="center">제육볶음</td>
    			<td><img src="돈까스.jpg"></img></td>
    			<td>매콤 제육볶음~</td>
-   			<td>3400</td>
-   			<td><button>장바구니 추가</button></td>
+   			<td>3,400</td>
+   			<td><button>가격수정</button></td>
+   			<td><button>삭제</button></td>
+   			<td><button>매진</button></td>
    		</tr>
    		<tr>
    			<td align="center">치킨마요</td>
    			<td><img src="돈까스.jpg"></img></td>
    			<td>치킨은 역시 진리 치킨마요~</td>
-   			<td>3300</td>
-   			<td><button>장바구니 추가</button></td>
+   			<td>3,300</td>
+   			<td><button>가격수정</button></td>
+   			<td><button>삭제</button></td>
+   			<td><button>매진</button></td>
    		</tr>
    		<tr>
    			<td align="center">참치마요</td>
    			<td><img src="돈까스.jpg"></img></td>
    			<td>명불허전 참지마요~</td>
-   			<td>3300</td>
-   			<td><button>장바구니 추가</button></td>
+   			<td>3,300</td>
+   			<td><button>가격수정</button></td>
+   			<td><button>삭제</button></td>
+   			<td><button>매진</button></td>
    		</tr>
    	</table>
    	<br>
+   	<button>메뉴추가</button>
+   	<button>로그아웃</button>
+   	<a href="basket">장바구니</a>
 	</body>
 </html>
