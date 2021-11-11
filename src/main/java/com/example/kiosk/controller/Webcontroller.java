@@ -8,7 +8,7 @@ public class Webcontroller {
 	
 		@GetMapping("login")	
 		public String loginmethod() {	
-			return "login";
+			return "g";
 		}
 		@GetMapping("join")	
 		public String joinmethod() {	
