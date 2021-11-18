@@ -12,6 +12,7 @@
 			<th>사진</th>
 			<th>이름</th>
 			<th>가격</th>
+			<th>수정</th>
 			<th>정보</th>	
 		</tr>
 	</thead>
@@ -21,11 +22,11 @@
 			<td th:text="${m.path}"></td>
 			<td th:text="${m.name}"></td>
 			<td th:text="${m.price}"></td>
+			<td><button>수정</button></td>
 			<td th:text="${m.info}"></td>
 		</tr>
    	</table>
-   	<button>추가</button>
-   	<button>삭제</button>
    	<br>
+   	
 	</body>
 </html>
