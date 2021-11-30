@@ -15,7 +15,6 @@ import com.example.kiosk.service.MenuService;
 
 @Controller	
 public class Webcontroller {
-	private MenuService menuService;
 	@Autowired
 	MenuRepository menuRepository;
 		
