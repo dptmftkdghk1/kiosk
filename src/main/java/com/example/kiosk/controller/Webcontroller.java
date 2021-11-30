@@ -1,18 +1,24 @@
 package com.example.kiosk.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.kiosk.Repository.MenuRepository;
+import com.example.kiosk.dto.MenuDto;
+import com.example.kiosk.service.MenuService;
+
 
 @Controller	
 public class Webcontroller {
-	
+	private MenuService menuService;
 	@Autowired
 	MenuRepository menuRepository;
-	
+		
 		@GetMapping("login")	
 		public String loginmethod() {	
 			return "login";
@@ -25,13 +31,9 @@ public class Webcontroller {
 		public String menumanagemethod() {	
 			return "menumanage";
 		}
-		@GetMapping("/menus")
-		public String menus(Model model) {
-			model.addAttribute("menus",menuRepository.findAll());
-			return "menus";
-		}
 		@GetMapping("basket")
 		public String basketmethod(){
 			return "basket";
 		}
+		
 }
