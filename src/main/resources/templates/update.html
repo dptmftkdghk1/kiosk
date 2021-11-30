@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>aa</title>
+</head>
+<body>
+	<h2>수정</h2>
+	<form th:action="@{'/post/edit/' + ${menuDto.id}}" method="POST" id="form1">
+		<input type="hidden" name="_method" value="put"/>
+		<input type="hidden" name="id" th:value="${menuDto.id}"/>
+		<table border="">
+			<tr>	
+				<td>상품이미지</td>
+				<td>
+					<input type="text" name="path" th:value="${menuDto.path}"><br>
+				</td>
+			</tr>
+			<tr>
+				<td>메뉴 이름</td>
+				<td>
+					<input type="text" id="name" name="name" th:value="${menuDto.name}">
+				</td>
+			</tr>
+			<tr>
+				<td>가격</td>
+				<td>
+					<input type="number" id="price" name="price" th:value="${menuDto.price}">
+				</td>
+			</tr>
+			<tr>
+				<td>수량</td>
+				<td>
+					<input type="number" name="total" th:value="${menuDto.total}">
+				</td>
+			</tr>
+			<tr>
+				<td>상품소개</td>
+				<td>
+					<textarea name="info" th:value="${menuDto.info}" rows=5" cols="50""></textarea> 
+				</td>
+			</tr>	
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="수정" id="editBtn">
+				</td>
+			</tr>	
+		</table>
+	</form>
+	<script>
+		$(document).ready(function(){
+			$("#editBtn").click(function(){
+				var name = $("#name").val();
+				var price = $("#price").val();
+				if(name == ""){
+					alert("상품명을 입력하세요");
+					name.foucs();
+				}else if(price == ""){
+					alert("상품 가격을 입력하세요");
+					price.foucs();
+				}
+				document.form1.submit();
+			})
+		})
+	</script>
+</body>
+</html>

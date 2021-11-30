@@ -8,18 +8,17 @@
 	<table border=1>
 	<thead>
 		<tr>
-			<th class="one wide">번호</th >
+			<th>번호</th >
 			<th>사진</th>
 			<th>이름</th>
 			<th>가격</th>
-			<th>정보</th>
-			<th>수량</th>	
+			<th>정보</th>	
 		</tr>
 	</thead>
 	<tbody>
-		<tr th:each="menu:${menuList}">
+		<tr th:each="menu:${conmenuList}">
 			<td>
-				<a th:href="@{'/post/' + ${menu.id}}">
+				<a th:href="@{'/posts/' + ${menu.id}}">
 					<span th:text="${menu.id}"></span>
 				</a>
 			</td>
@@ -35,12 +34,7 @@
 			<td>
 				<span th:text="${menu.info}"></span>
 			</td>
-			<td>
-				<span th:text="${menu.total}"></span>
-			</td>
 		</tr>
    	</table>
-   	<br>
-   	<a th:href="@{/post}">등록</a>
 	</body>
 </html>
