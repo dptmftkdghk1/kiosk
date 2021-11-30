@@ -53,12 +53,20 @@ public class Member {
 	}
 	@Column(nullable=false, length=30)
 	private String email;
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	@Column(nullable=false, length=5)
 	private String name;
-	@Column(nullable=false, length=23)
+	@Column(nullable=false, length=100)
 	private String password;
 	@Column(nullable=false, length=8)
 	private String phonenumber;
+	@Column(length=100)
+	private String role="user";
 
 	
 }

@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout::layout(~{::title}, ~{}, ~{::section})}">
 	<head></head>
 	<body>
 	<h2>로그인</h2>
+	<div th:if="${param.error}">Failed. Check username and password. </div>
+	<form th:action="@{/login}" method="post">
 	<table border=1>
 		<tr>
    			<td align="center">아이디</td>
-   			<td><input type="text" name="id" autofocus></td>
-   			<td rowspan='2'>로그인</td>
+   			<td><input type="text" name="username" autofocus></td>
+   			<td rowspan='2'><input type="sumit" value="로그인"></td>
    		</tr>
    		<tr>
    			<td align="center">비밀번호</td>
-   			<td><input type="password" name="pd"></td>
+   			<td><input type="password" id="pd" name="password"></td>
    		</tr>
    	</table>
+   	</form>
    	<br>
    	<button onclick="location.href='join'">회원가입</button>
+   	
+   	<script th:inline="javascript">
+   	$(function() {
+	$('#send').click((event)=>{
+		const userid=$('#userid').val();
+		const name=$('#username').val();
+		const path='api/login';
+		const json=JSON.stringify({
+			'userid': id,
+			'username': name
+		});
+		const csrfToken=/*[[${_csrf.token}]]*/null;
+		const csrfHeader=/*[[${_csrf.headerName}]]*/null;
+		$.ajax({
+			url:path,
+			type: 'POST',
+			constentType: 'application/json',
+			data:json,
+			beforeSend:function(xhr){xhr.setRequestHeader(csrfHeader, csrfToken);}
+		}).done((result) => {
+			console.log(result.userid);
+			$('#result').text(result.userid);
+		})
+	})
+})
+</script>
 	</body>
 </html>

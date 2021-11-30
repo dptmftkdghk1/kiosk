@@ -34,4 +34,8 @@ public class Webcontroller {
 		public String basketmethod(){
 			return "basket";
 		}
+		@GetMapping("/denied")
+		public String denied() {
+			return "denied";
+		}
 }
