@@ -34,13 +34,13 @@ public class MemberController {
     }
 
     // 접근 거부 페이지
-    @GetMapping("/user/denied")
+    @GetMapping("/denied")
     public String dispDenied() {
         return "/denied";
     }
 
     // 내 정보 페이지
-    @GetMapping("/admin")
+    @GetMapping("/myinfo")
     public String dispMyInfo() {
         return "/myinfo";
     }

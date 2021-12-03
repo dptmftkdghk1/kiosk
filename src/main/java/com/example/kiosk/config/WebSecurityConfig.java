@@ -39,12 +39,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		//.antMatchers("/mypoint/**").hasAnyAuthority("QUERY", "WRITE") // 접근 권한. 
-				.antMatchers("/admin/**").hasRole("ADMIN")
+				.antMatchers("/admin/**", "/post/**").hasRole("ADMIN")
 				.antMatchers("/**").permitAll() // 위 경우를 빼고 모든 권한을 줌=로그인 필요 없음.
 				.anyRequest().authenticated()
-		.and().formLogin().loginPage("/").defaultSuccessUrl("/admin").permitAll()
+		.and().formLogin().loginPage("/").defaultSuccessUrl("/myinfo").permitAll()
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")).logoutSuccessUrl("/").invalidateHttpSession(true)
-		.and().exceptionHandling().accessDeniedPage("/user/denied");
+		.and().exceptionHandling().accessDeniedPage("/denied");
 	}
 	@Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
