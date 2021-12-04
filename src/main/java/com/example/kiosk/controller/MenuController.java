@@ -73,4 +73,8 @@ public class MenuController {
 		
 		return "redirect:/menus";
 	}
+	@GetMapping("/cart")
+	public String getcart() {
+		return "cartList";
+	}
 }

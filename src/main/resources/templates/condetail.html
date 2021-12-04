@@ -3,6 +3,7 @@
 <head>
 	<meta charset = "UTF-8">
 	<title>title</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<h2>상품 상세정보</h2>
@@ -32,18 +33,30 @@
 			</tr > 
 			<tr align="center">
 				<td colspan="2">
-					<form>
-						<input type="hidden" name="" action="">
-						<select name="">
-							<forEach begin="1" end="10" var="i">
-								<option value="${i}">${i}</option>
-							</forEach>
-						</select>&nbsp;개
-						<input type="submit" value="장바구니에 담기">
-					</form>
+						<input type="number" id="count" min="1">개
+						<input type="submit" id="sub" value="장바구니에 담기">
+					<br>
+					<br>
+					<button onclick="location.href='/conmenus'">돌아가기</button>
 				</td>
 			</tr >
 		</td>
 	</table>
+	
+	<script>
+	 $("#sub").click(function(event) {
+	var count = $("#count").val();
+	if(count>0){
+	alert(count + "개 담았습니다");
+		if(confirm("장바구니로 이동하시겠습니까?") == true){
+        window.location.href='/cart'
+    	}else{
+	        return;
+	    }		
+	}else 
+	alert("갯수를 넣어주세요");
+	});
+
+	</script>
 </body>
 </html>
