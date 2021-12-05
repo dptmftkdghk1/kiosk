@@ -1,6 +1,7 @@
 package com.example.kiosk.entity;
 
 import lombok.*;
+
 import javax.persistence.*;
 
 

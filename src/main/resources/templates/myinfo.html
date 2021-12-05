@@ -9,7 +9,7 @@
     <hr>
     <br>
     <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a><br><br>
-    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin/menus}">메뉴관리</a>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/menus}">메뉴관리</a>
     <a th:href="@{/conmenus}">고객메뉴</a>
 </body>
 </html>

@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 public class MenuController {
 	private MenuService menuService;
 	/* 메뉴 목록 */
-	@GetMapping("admin/menus")
+	@GetMapping("/menus")
 	public String list(Model model) {
 		List<MenuDto> menuList = menuService.getMenulist();
 		model.addAttribute("menuList",menuList);
