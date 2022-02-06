@@ -13,7 +13,7 @@ import com.example.kiosk.service.MemberService;
 public class MemberController {
     private MemberService memberService;
 
-    // 메인 페이지
+    // 로그인 페이지
     @GetMapping("/")
     public String index() {
         return "/login";
